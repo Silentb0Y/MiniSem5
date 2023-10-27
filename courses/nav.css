@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px 0px;
+}
+.logo {
+  position: relative;
+  color: white;
+  font-size: 2em;
+  font-weight: 700;
+  text-decoration: none;
+}
+header nav {
+  display: flex;
+  gap: 10px;
+  font-family: monospace;
+}
+header nav a {
+  position: relative;
+  text-decoration: none;
+  padding: 12px 20px;
+  color: white;
+  font-size: larger;
+  font-weight: 500;
+}
+header nav a:hover {
+  color: var(--clr);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#User {
+  color: aqua;
+}
+iframe {
+  width: 306px;
+  height: 183.59px;
+}
+body {
+  width: 100%;
+}
+a {
+  text-decoration: none;
+}
+#interview {
+  font-size: 30px;
+}
+#quiz {
+  font-size: 20px;
+}
+#banner {
+  width: 600px;
+  height: 400px;
+}
