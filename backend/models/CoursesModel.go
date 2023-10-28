@@ -15,11 +15,12 @@ type Image struct {
 }
 
 type Course struct {
-	CourseID            int      `bson:"_id,omitempty" json:"courseId"`
-	CourseName          string   `bson:"courseName" json:"courseName"`
-	CourseMetaData      string   `bson:"courseMetaData" json:"courseMetaData"`
-	CourseResourceLinks []string `bson:"courseResourceLinks" json:"courseResourceLinks"`
-	CourseImage         Image    `bson:"courseImage" json:"courseImage"`
+	CourseID       int    `bson:"_id,omitempty" json:"courseId"`
+	CourseName     string `bson:"courseName" json:"courseName"`
+	CourseMetaData string `bson:"courseMetaData" json:"courseMetaData"`
+	// CourseImage     Image  `bson:"courseImage" json:"courseImage"`
+	CourseImageLink string `json:"courseImageLink"`
+	CourseLink      string `json:"courseLink"`
 }
 
 var courseCollection *mongo.Collection

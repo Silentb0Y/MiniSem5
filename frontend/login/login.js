@@ -13,12 +13,28 @@ function signup() {
 function login() {
   let email = document.querySelector("#email1").value;
   let pass = document.querySelector("#password").value;
+
   var em = localStorage.getItem("emailC");
   var pa = localStorage.getItem("pass2C");
   var btn = document.querySelector(".button");
-  if (email == em && pa == pass) {
-    btn = window.location.replace("../index.html");
-  } else {
-    alert("login failed");
-  }
+
+  fetch("localhost:8088/login", {
+    method: "POST",
+    body: JSON.stringify({
+      username: email,
+      password: pass,
+    }),
+  })
+    .then((res) => {
+      if (res.headers == 200) {
+        btn = window.location.replace("../index.html");
+      }
+    })
+    .catch((error) => console.log("ERROR"));
+
+  // if (email == em && pa == pass) {
+  //   btn = window.location.replace("../index.html");
+  // } else {
+  //   alert("login failed");
+  // }
 }
