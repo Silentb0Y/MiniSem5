@@ -11,6 +11,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	server := som.NewAPIServer(":8098", store)
+	server := som.NewAPIServer(":7002", store)
 	server.Run()
 }

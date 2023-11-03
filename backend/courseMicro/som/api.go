@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 
+	gohandlers "github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 )
 
@@ -23,12 +24,17 @@ func NewAPIServer(listenAddr string, store Storage) *APIServer {
 func (s *APIServer) Run() {
 	router := mux.NewRouter()
 
+	corsHandler := gohandlers.CORS(
+		gohandlers.AllowedOrigins([]string{"*"}),
+		gohandlers.AllowedMethods([]string{"GET", "POST", "OPTIONS", "DELETE"}),                  // Allow only GET and POST methods
+		gohandlers.AllowedHeaders([]string{"Content-Type", "Authorization", "X-Requested-With"}), // Allow only Content-Type header
+	)
 	router.HandleFunc("/getCourses", s.GetCoursesHandler)
 	router.HandleFunc("/getcourse/:id", s.GetCourseHandler)
 
 	log.Println("JSON API server running on port: ", s.listenAddr)
 
-	http.ListenAndServe(s.listenAddr, router)
+	http.ListenAndServe(s.listenAddr, corsHandler(router))
 }
 
 func (s *APIServer) GetCoursesHandler(w http.ResponseWriter, r *http.Request) {
@@ -42,6 +48,7 @@ func (s *APIServer) GetCoursesHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
+	log.Println("sending courses")
 	w.Write(marsheledOutgoingData)
 }
 
