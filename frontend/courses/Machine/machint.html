@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../webinterview.css" />
+
+    <link
+      href="http://fonts.googleapis.com/css?family=Oswald:400,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <!--Nav par-->
+    <header>
+      <a href="#" class="logo">CodeForProgress</a>
+      <nav>
+        <a href="#home" style="--clr: #ff4d4d" class="active">Home</a>
+        <a href="#About" style="--clr: #fd79a8">About</a>
+        <a href="#Services" style="--clr: #c56cf0">Services</a>
+        <a href="#Contact" style="--clr: #ffeaa7">Contact</a>
+        <a href="#Portfolio" style="--clr: #17c0eb" id="User"></a>
+      </nav>
+    </header>
+    <!--content-->
+    <div class="container">
+      <h1>Front-End Interview Question</h1>
+      <ul id="accordion">
+        <li>
+          <label for="first"
+            >What is Android?<span class="speak">&#x3e;</span></label
+          >
+          <input type="radio" name="accordion" id="first" checked />
+          <div class="content">
+            <ul>
+              <li>
+                Android is an open-source, Linux-based operating system used in
+                mobiles, tablets, televisions, etc.
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <label for="s"
+            >Q2: Does android support other languages than java?
+            <span class="speak">&#x3e;</span></label
+          >
+          <input type="radio" name="accordion" id="s" />
+          <div class="content">
+            <p>
+              Yes, an android app can be developed in C/C++ also using android
+              NDK (Native Development Kit). It makes the performance faster. It
+              should be used with Android SDK.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <label for="t"
+            >Q3: What are the core building blocks of android?<span
+              class="speak"
+              >&#x3e;</span
+            ></label
+          >
+          <input type="radio" name="accordion" id="t" />
+          <div class="content">
+            <p>
+              Activity<br />View<br />
+              Intent<br />Service<br />
+              Content Provider<br />Fragment<br />
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <label for="tt"
+            >Q4: What are the life cycle methods of android activity?<span
+              class="speak"
+              >&#x3e;</span
+            ></label
+          >
+          <input type="radio" name="accordion" id="tt" />
+          <div class="content">
+            <p>
+              There are 7 life-cycle methods of activity. They are as follows:
+              <br />
+              onCreate()<br />onStart()<br />
+              onDestory()<br />onStop()<br />
+              onPause<br />onRestart<br />
+              onResume()
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <label for="ftt"
+            >Q5: What is activity in Android?<span class="speak"
+              >&#x3e;</span
+            ></label
+          >
+          <input type="radio" name="accordion" id="ftt" />
+          <div class="content">
+            <p>
+              Activity is like a frame or window in java that represents GUI. It
+              represents one screen of android.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <label for="si"
+            >Q6: What is an Application Resource File?
+            <span class="speak">&#x3e;</span></label
+          >
+          <input type="radio" name="accordion" id="si" />
+          <div class="content">
+            <p>What is an Application Resource File?</p>
+          </div>
+        </li>
+
+        <li>
+          <label for="st"
+            >Q7: How can you Identify View Elements in an Android Program?
+
+            <span class="speak">&#x3e;</span></label
+          >
+          <input type="radio" name="accordion" id="st" />
+          <div class="content">
+            <p>How can you Identify View Elements in an Android Program?</p>
+          </div>
+        </li>
+
+        <li>
+          <label for="ei"
+            >Q8: What are the Various Storage that Android Provides?<span
+              class="speak"
+              >&#x3e;</span
+            ></label
+          >
+          <input type="radio" name="accordion" id="ei" />
+          <div class="content">
+            <p>
+              1 . Shared preferences<br />
+              2 . Internal storage<br />
+              3 . External storage<br />
+              4 . SQLite database<br />
+              5 . Network Connection
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <label for="nin"
+            >Q9: Name the Dialog Boxes Supported by Android.
+            <span class="speak">&#x3e;</span></label
+          >
+          <input type="radio" name="accordion" id="nin" />
+          <div class="content">
+            <p>
+              Alert dialog box , Alert dialog box ,Alert dialog box And Time
+              picker dialog box
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <label for="ten"
+            >Q10: What is a Singleton Class in Android?
+            <span class="speak">&#x3e;</span></label
+          >
+          <input type="radio" name="accordion" id="ten" />
+          <div class="content">
+            <p>
+              A singleton class in Android is a class that can only instantiate
+              one object. This object can then be shared by all classes. An
+              example could be of controlling concurrency and creating a central
+              point of access for an application to access its data store.
+            </p>
+          </div>
+        </li>
+      </ul>
+
+      <!--backend-->
+
+      <ul id="accordionn">
+        <li>
+          <label for="second">
+            Q11: What is DDMS? <span class="speak">&#x3e;</span></label
+          >
+          <input type="radio" name="accordionn" id="second" checked />
+          <div class="content">
+            <p>
+              DDMS stands for Dalvik Debug Monitor Service. It is a debugging
+              tool that comes with Android. It provides an array of services
+              like port forwarding, screen capture, logcat process, thread and
+              heap information on the device, radio state information, incoming
+              call, SMS spoofing, and many more.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <label for="s2">
+            Q12: Define Android Architecture.
+            <span class="speak">&#x3e;</span></label
+          >
+          <input type="radio" name="accordionn" id="s2" />
+          <div class="content">
+            <p>
+              1.Linux kernel . <br />
+              2.Native libraries <br />
+              3.Android runtime <br />
+              4.Android framework <br />
+              5.Applications <br />
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <label for="s22"
+            >Q13: What are the Basic Tools used to Develop an Android App?
+            <span class="speak">&#x3e;</span></label
+          >
+          <input type="radio" name="accordionn" id="s22" />
+          <div class="content">
+            <p>
+              1.JDK The Java Development Kit allows developers to create Java
+              programs that can then be run by the JVM (Java Virtual Machine)
+              and JRE (Java Runtime Environment).
+              <br />
+              2. Eclipse + ADT plugin Eclipse is an integrated development
+              environment for developing programs. The ADT plugin (Android
+              Development Tools) is a plugin for Eclipse that gives you a
+              powerful and integrated environment to build Android applications.
+              <br />
+              3.SDK Tools The Software Development Kit tools are a collection of
+              tools that can be used to develop applications for specific
+              operating systems and devices.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <label for="s21"
+            >Q14: What do you mean by a Drawable Folder in Android?
+            <span class="speak">&#x3e;</span></label
+          >
+          <input type="radio" name="accordionn" id="s21" />
+          <div class="content">
+            <p>
+              The drawable folder in Android is a collection of drawable
+              resources that is used for graphics that can be drawn. Every
+              drawable is stored as an independent file in the drawable folder.
+              It can be used as a background, banner, icons, splash screen, etc.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <label for="s12"
+            >Q15: What is Service in Android?
+            <span class="speak">&#x3e;</span></label
+          >
+          <input type="radio" name="accordionn" id="s12" />
+          <div class="content">
+            <p>
+              A service is an application component that runs in the background.
+              These background operations could be playing music, handling
+              network transactions, loading a browser tab, etc. Such operations
+              do not provide a UI that the user can interact with. Such a
+              service can run in the background even if the application is
+              destroyed.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <label for="s2a">
+            Q16: What is AAPT?<span class="speak">&#x3e;</span></label
+          >
+          <input type="radio" name="accordionn" id="s2a" />
+          <div class="content">
+            <p>
+              AAPT stands for Android Asset Packaging Tool. It is included in
+              the tools/directory of the SDK. The AAPT allows you to view,
+              create, and update Zip-compatible archives. It is responsible for
+              handling the packaging process.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <label for="t2"
+            >Q17: Name Some Exceptions in Android
+            <span class="speak">&#x3e;</span></label
+          >
+          <input type="radio" name="accordionn" id="t2" />
+          <div class="content">
+            <p>
+              a) SurfaceHolder.BadSurfaceTypeException
+              <br />
+              b) WindowManager.BadTokenException
+              <br />
+              c) Inflate Exception
+              <br />
+              d) Surface.OutOfResourceException
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!--Script Part-->
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

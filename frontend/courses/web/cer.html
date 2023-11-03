@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="../nav.css">
+    <style>
+        .container{
+            margin-top: 90px;
+        border: 3px solid black;
+        }
+        .section{
+        
+            margin: 30px;
+        }
+        canvas{
+            border: 2px solid black;
+            margin: 30px;
+        
+        }
+       #download{
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+           font-size: x-large;
+        }
+        h1{
+            text-align: center;
+        }
+        label{
+            font-size: x-large;
+        }
+        input{
+            padding: 10px;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">CodeForProgress</a>
+        <nav>
+          <a href="../android/androiddev.html" style="--clr: #ff4d4d" class="active">Home</a>
+          <a href="#About" style="--clr: #fd79a8">About</a>
+          <a href="#Services" style="--clr: #c56cf0">Services</a>
+          <a href="#Contact" style="--clr: #ffeaa7">Contact</a>
+          <a href="#Portfolio" style="--clr: #17c0eb" id="User"></a>
+        </nav>
+      </header>
+  <div class="container">
+   <div class="section">
+    <h1>Certificate generater</h1>
+   <label for="">Enter Your Name : </label> <input type="text" name="" id="name">
+   </div>
+  <canvas id="canvas" height="450px" width="900px"></canvas>
+  <a  href='' id="download"> Your Certificate Is ready</a>  
+</div>
+ 
+    <script>
+        
+var nameInput = document.getElementById('name')
+var downloadd = document.getElementById('download')
+const canvas = document.getElementById('canvas')
+const ctx = canvas.getContext('2d')
+const image = new Image();
+image.src = 'web.jpg'
+image.onload = function(){
+drawImage()
+}
+function drawImage(){
+    ctx.drawImage(image,0,0, canvas.width,canvas.height)
+ctx.font = '30px monotype corsiva'
+ctx.fillstyle ='#29e'
+ctx.fillText(nameInput.value,350,240)
+}
+
+nameInput.addEventListener('input',function(){
+    drawImage()
+})
+downloadd.addEventListener('click',function(){
+    downloadd.href =  canvas.toDataURL()
+    downloadd.download = true
+})
+    </script>
+</body>
+</html>
