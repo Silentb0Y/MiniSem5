@@ -9,6 +9,8 @@ interface LoginPageProps {
 }
 export const Login: React.FC<LoginPageProps> = ({ setLogIn , isLogin}) => {
   const [data, setData] = useState("")
+  const [username, setUsername] = useState("")
+  const [password, setpassword] = useState("")
 
   const navigate = useNavigate();
 
@@ -19,14 +21,15 @@ export const Login: React.FC<LoginPageProps> = ({ setLogIn , isLogin}) => {
   },[isLogin, navigate])
 
   function sendLoginRequest() {
-  fetch("http://localhost:9000/login", {
-      method: "GET",
+    console.log("done")
+  fetch("http://localhost:7001/login", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json", // Set Content-Type header here
       },
       body: JSON.stringify({
-        username: "yash",
-        password: "yash",
+        username: username,
+        password: password,
         courseId: 1,
         course: {
           courseId: 1,
@@ -40,7 +43,8 @@ export const Login: React.FC<LoginPageProps> = ({ setLogIn , isLogin}) => {
       }),
     })
       .then((res: any) => {
-        if (res.headers == 200) {
+        console.log(res)
+        if (res.ok) {
             setLogIn(true)
         }
       })
@@ -56,14 +60,9 @@ export const Login: React.FC<LoginPageProps> = ({ setLogIn , isLogin}) => {
                 <div className="login form">
                     <h3>Login</h3>
                     <form action="#">
-                        <input type="text" placeholder="Enter your email" id="email1" />
-                        <input
-                            type="password"
-                            placeholder="Enter your password"
-                            id="password"
-                        />
-                        {/* <a href="#">Forgot password?</a> */}
-                        <input type="button" className="button" value="Login" onClick={heeh}/>
+                        <input type="text" placeholder="Enter your email" id="email1" value={username} onChange={e => setUsername(e.target.value)} />
+                        <input type="password" placeholder="Enter your password" id="password" value={password} onChange={e => setpassword(e.target.value)} />
+                        <button className="btn btn-success bg-black" type="button" onClick={sendLoginRequest}>Login</button>
                     </form>
                     <div className="signup">
                         <span className="signup"

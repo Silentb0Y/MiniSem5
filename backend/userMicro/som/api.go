@@ -49,7 +49,6 @@ func (s *APIServer) SignupHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *APIServer) LoginHandler(w http.ResponseWriter, r *http.Request) {
-	// fmt.Println(r.Body)
 	var incomingData ApiData
 	decoder := json.NewDecoder(r.Body)
 	err := decoder.Decode(&incomingData)
@@ -70,5 +69,5 @@ func (s *APIServer) LoginHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Authorization", "Bearer "+"token")
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte("login sucessful"))
+	// w.Write([]byte("login sucessful"))
 }
